@@ -1,0 +1,404 @@
+<!DOCTYPE>
+<html lang="en">  
+<head>
+  <meta http-equiv="Content-type" content="text/html">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" >
+  <title>Citizen Interactive Wireframe</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" title="master">
+  <link rel="stylesheet" href="css/custom.css" type="text/css" media="screen" title="master">
+  <script src="js/vendor/jquery-3.3.1.min.js" type="text/javascript"></script>
+</head>
+
+<body style="height:100%;">
+  <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-primary">
+    <a class="navbar-brand mx-auto" href="https://mydex.github.io/citizen_interactive_wireframe/home_loggedin.html">
+      <img class="rounded" src="https://mydex.github.io/citizen_interactive_wireframe/images/EPCAS-square.jpg" alt="logo" width="40">
+    </a>
+    <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="nav-content">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item"><a href="https://mydex.github.io/citizen_interactive_wireframe/home_loggedin.html" class="nav-link text-white font-weight-light">Home</a></li>
+        <li class="nav-item"><a href="https://mydex.github.io/citizen_interactive_wireframe/action_plan.html" class="nav-link text-white font-weight-light">Action Plan</a></li>
+        <li class="nav-item"><a href="https://mydex.github.io/citizen_interactive_wireframe/messages_v2.html" class="nav-link text-white font-weight-light">Messages</a></li>
+        <li class="nav-item"><a href="https://mydex.github.io/citizen_interactive_wireframe/tips.html" class="nav-link text-white font-weight-light">Advice</a></li>
+        <li class="nav-item"><a href="https://mydex.github.io/citizen_interactive_wireframe/information.html" class="nav-link text-white font-weight-light">Your Data</a></li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+      </form class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <ul class="navbar-nav my-2 my-lg-0">
+        <li class="nav-item"><a href="https://mydex.github.io/citizen_interactive_wireframe/index.html" class="nav-link text-white font-weight-light">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main style=" min-height:75%;">
+    <div class="container">
+      <h3 class="mt-4 mb-4">Apply for Warm Home Discount</h3>
+      <div class="mt-4">In order to receive Warm Home Discount you will need to submit an application for each year that you are eligible. You can review and update the information required to check and demonstrate eligibility in this section.</div>
+      <div class="row">
+        <p class="mt-2 col-12 col-md-6 col-lg-6">
+          Return to action plan <a href="https://mydex.github.io/citizen_interactive_wireframe/action_plan_v2.html" class="btn btn-outline-primary" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);"><img class="rounded" src="https://mydex.github.io/citizen_interactive_wireframe/images/double-arrow.png" alt="logo" width="15"></a>
+        </p>
+      </div>
+      <div id="checkSupplier" style="display: block;"> 
+        <h4>Scottish Power</h4>
+      </div>
+      <div id="currentSupplier">
+        <h4 class="mt-4">Scottish Power Warm Home Discount Application</h4>
+        <div class="mt-2">Check the details under each of the headings below. Add missing details or type over incorrect details. When you have checked and closed each section you will be able to request that your energy advocate submits your application.</div>
+        <div id="module" class="container row mt-4 pr-0">
+          <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapsePersonal" aria-expanded="false" aria-controls="collapsePersonal" id="personalButton" data-text="Complete">Contact Details</a></h5>
+          <div class="collapse col-12 p-0" id="collapsePersonal" aria-labelledby="headingPersonal">
+            <div class="table-responsive">
+              <table class="table table-bordered table-sm text-left" id="personal">
+                <thead>
+                  <th class="bg-primary"></th>
+                  <th class="bg-primary text-white">Data</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Title</th>
+                    <td>Mrs</td>
+                  </tr>
+                  <tr>
+                    <th>Forename</th>
+                    <td>Citizen</td>
+                  </tr>
+                  <tr>
+                    <th>Surname</th>
+                    <td>Twenty</td>
+                  </tr>
+                  <tr>
+                    <th>Address</th>
+                    <td>12 Fake Street <br>FakeTown</td>
+                  </tr>
+                  <tr>
+                    <th>Postcode</th>
+                    <td>FA12 3KE</td>
+                  </tr>
+                  <tr>
+                    <th>Telephone</th>
+                    <td>012345 678901</td>
+                  </tr>
+                  <tr>
+                    <th>Mobile</th>
+                    <td>077123456789</td>
+                  </tr>
+                  <tr>
+                    <th>Email</th>
+                    <td>citizen@twenty.com</td>
+                  </tr>
+                  <tr>
+                    <th>Date of birth</th>
+                    <td>01-01-1980</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="module" class="container row mt-3 pr-0">
+          <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseSupplier" aria-expanded="false" aria-controls="collapseSupplier" id="supplierButton" data-text="Complete">Electricty Account</a></h5>
+          <div class="collapse col-12 p-0" id="collapseSupplier" aria-labelledby="headingSupplier">
+            <div class="table-responsive">
+             <table class="table table-bordered table-sm text-left" id="supplier">
+              <thead>
+                <tr>
+                  <th class="bg-primary"></th>
+                  <th class="bg-primary text-white">Data</th>
+                </tr>
+              </thead>
+              <tbody>
+               <tr>
+                <th>MPAN</th>
+                <td>987654321</td>
+              </tr>
+              <tr>
+                <th>Supplier</th>
+                <td>Scottish Power</td>
+              </tr>
+              <tr>
+                <th>Electric Account Number</th>
+                <td>987654321</td>
+              </tr>
+              <tr>
+                <th>Customer Reference Number (CRM)</th>
+                <td>987654321</td>
+              </tr>
+              <tr>
+                <th>Tariff</th>
+                <td>987654321</td>
+              </tr>
+              <tr>
+                <th>Meter Serial Number</th>
+                <td>987654321</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="module" class="container row mt-3 pr-0">
+      <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseIncome" aria-expanded="false" aria-controls="collapseIncome" id="incomeButton" data-text="Complete">Household Income</a></h5>
+      <div class="collapse col-12 p-0" id="collapseIncome" aria-labelledby="headingIncome">
+        <div class="table-responsive">
+          <table class="table table-bordered table-sm text-left" id="income">                
+            <thead>
+              <th class="bg-primary"></th>
+              <th class="bg-primary text-white">Data</th>
+            </thead>
+            <tbody>
+             <tr>
+              <th>Your yearly income</th>
+              <td>£12,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div id="module" class="container row mt-3 pr-0">
+    <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseFuel" aria-expanded="false" aria-controls="collapseFuel" id="fuelButton" data-text="Complete">Fuel Spend</a></h5>
+    <div class="collapse col-12 p-0" id="collapseFuel" aria-labelledby="headingFuel">
+      <div class="table-responsive">
+        <table class="table table-bordered table-sm text-left" id="fuel">
+          <thead>
+            <th class="bg-primary"></th>
+            <th class="bg-primary text-white">Data</th>
+          </thead>
+          <tbody>
+           <tr>
+             <th>Your weekly spend on electricity</th>
+             <td class="text-right">£20</td>
+           </tr>
+           <tr>
+            <th>Your weekly spend on gas</th>
+            <td class="text-right">£10</td>
+          </tr>
+          <tr>
+            <th>Percentage of income spent on fuel</th>
+            <td class="text-right">13%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row" id="submitToEA">
+  <div class="col-12 mt-4">Send to Energy Advocate to check & send application<br>
+    <button class="btn btn-outline-primary mt-2 mb-4 " style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);" type="button">Send</button>
+  </div>
+</div>
+</div>
+<div id="afterSubmit">
+  <h6 class="mt-4 mb-2">Reference number for application</h6>
+  <h6 id="name0" name="name">SP12345</h6>
+  <h6 class="mt-4 mb-2">Notes regarding application</h6>
+  <div>No notes yet.</div>
+  <h6 class="mt-4 mb-2">Success status : 'unknown'</h6>
+  <h6 class="mt-4 mb-2">Add letters from your energy supplier here</h6>
+  <input type="text" class="form-control col-12 col-md-6 col-lg-6 mb-2" id="picName0" name="picName" value="Display name:"/>
+  <div class="row col-12"><label class="btn btn-outline-primary mb-2" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);" for="image0"><input id="image0" type="file" accept="image/*" style="display:none" onchange="$('#upload-file-info').html(this.files[0].name)"> Choose file</label><span class='font-italic ml-2' id="upload-file-info"> No file chosen</span></div>
+  <div class="mt-2 mb-3">Image name : 'WHDLetter2018'</div>
+  <a href="#img1"><img src="https://via.placeholder.com/400X600" class="thumbnail"></a>
+  <a href="#_" class="lightbox" id="img1"><img src="https://via.placeholder.com/400X600"></a>
+  <h6 class="mt-4 mb-2">Notes from your energy advocate</h6>
+  <div>No notes.</div>
+  <button class="btn btn-outline-primary mt-4" onclick="showAudit()" style='box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);'>Audit</button>
+</div>
+<div id="audit" style="display: none;">
+  <h4 class="mt-4 mb-2">Audit</h4>
+  <p>Please add a copy of the audit request letter above for your energy advocate to view, if you haven't already.</p>
+  <h4 class="mt-4 mb-2">Gather Evidence</h4>
+  <p>Your energy advocate has asked for the following evidence</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-sm">
+      <thead class="bg-primary">
+        <tr>
+          <th>Document required</th>
+          <th>File</th>
+          <th>File Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Benefit letters
+            <li>Please include all of your benefit letters; JSA, disability etc.</li>
+          </td>
+          <td><label class="btn btn-outline-primary mb-2 mr-2" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);" for="image0">
+           <input id="image0" type="file" accept="image/*" style="display:none" onchange="$('#upload-file-info').html(this.files[0].name)"> Choose file</label><span class='font-italic' id="upload-file-info"> No file chosen</span>
+           <div id="benLetters"></div>
+           <button onclick="addImage('benLetters', 'benLettersNames')" required class="btn btn-outline-primary" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);">+ more</button>
+         </td>
+         <td><input style="width: auto;" type="text" class="form-control" id="picName0" name="picName" value="Display name:"/>
+          <div id="benLettersNames"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Home Address
+          <li></li>
+        </td>
+        <td><label class="btn btn-outline-primary mb-2 mr-2" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);" for="image1">
+          <input id="image1" type="file" accept="image/*" style="display:none" onchange="$('#upload-file-info').html(this.files[0].name)"> Choose file</label><span class='font-italic' id="upload-file-info"> No file chosen</span>
+          <div id="homeLetters"></div>
+          <button onclick="addImage('homeLetters', 'homeLettersNames')" required class="btn btn-outline-primary" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);">+ more</button>
+        </td>
+        <td><input style="width: auto;" type="text" class="form-control" id="picName1" name="picName" value="Display name:"/>
+          <div id="homeLettersNames"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Birth certificate
+          <li></li>
+        </td>
+        <td><label class="btn btn-outline-primary mb-2 mr-2" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);" for="image2">
+          <input id="image1" type="file" accept="image/*" style="display:none" onchange="$('#upload-file-info').html(this.files[0].name)"> Choose file</label><span class='font-italic' id="upload-file-info"> No file chosen</span>              <div id="birthCert"></div>
+          <button onclick="addImage('birthCert', 'birthCertNames')" required class="btn btn-outline-primary" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);">+ more</button>
+        </td>
+        <td><input style="width: auto;" type="text" class="form-control" id="picName2" name="picName" value="Display name:"/>
+          <div id="birthCertNames"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Pay slips
+          <li style="width: 250px;"></li>
+        </td>
+        <td><label class="btn btn-outline-primary mb-2 mr-2" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);" for="image3">
+          <input id="image1" type="file" accept="image/*" style="display:none" onchange="$('#upload-file-info').html(this.files[0].name)"> Choose file</label><span class='font-italic' id="upload-file-info"> No file chosen</span>
+          <div id="pay"></div>
+          <button onclick="addImage('pay', 'paySlipsNames')" required class="btn btn-outline-primary" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);">+ more</button>
+        </td>
+        <td><input style="width: auto;" type="text" class="form-control" id="picName3" name="picName" value="Display name:"/>
+          <div id="paySlipsNames"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h6 class="mt-4 mb-2">Date evidence sent by energy advocate</h6>
+<div>Not sent yet</div>
+<h6 class="mt-4 mb-2">Notes regarding WHD audit</h6>
+<div>No notes.</div>
+<button class='btn btn-outline-primary mt-2 mb-4' style='box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);'>Submit</button>
+</div>
+</div>
+</main>
+
+<style>
+#line {
+  border-bottom: 2px solid #2E8B57;
+}
+
+#module a.collapsed:after  {
+  content: attr(data-text);
+  float: right;
+  display:inline-block;
+  font-weight:400;
+  text-align:center;
+  white-space:nowrap;
+  vertical-align:middle;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  border:1px solid transparent;
+  padding:.3rem .3rem;
+  font-size:1rem;
+  line-height:1.5;
+  border-radius:.25rem;
+  transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+  color:#2E8B57;
+  background-color:transparent;
+  background-image:none;
+  border-color:#2E8B57;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);
+}
+
+#module a:not(.collapsed):after {
+  content: 'Confirm';
+  float: right;
+  display:inline-block;
+  font-weight:400;
+  text-align:center;
+  white-space:nowrap;
+  vertical-align:middle;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  border:1px solid transparent;
+  padding:.375rem .75rem;
+  font-size:1rem;
+  line-height:1.5;
+  border-radius:.25rem;
+  transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+  color:#2E8B57;
+  background-color:transparent;
+  background-image:none;
+  border-color:#2E8B57;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+.lightbox img {
+  max-width: 97%;
+  max-height: 97%;
+  margin-top: 2%;
+}
+
+.lightbox:target {
+  outline: none;
+  display: block;
+}
+</style>
+
+<script>
+  function showAudit() {
+    document.getElementById('audit').style.display = 'block';
+  }
+
+  var imageCounter = 4;
+  function addImage(divFile, divName){
+    var newDivFile = document.createElement('div');
+    newDivFile.innerHTML = 
+    "<label class='btn btn-outline-primary mb-2 mr-2' style='box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);' for='image"+ imageCounter + "'>\
+    <input id='image"+ imageCounter + "' type='file' accept='image/*' style='display:none' onchange='$('#upload-file-info').html(this.files[0].name)'> Choose file</label><span class='font-italic' id='upload-file-info'> No file chosen</span>";
+    document.getElementById(divFile).appendChild(newDivFile);
+    var newDivName = document.createElement('div');
+    newDivName.innerHTML = 
+    "<input style='width: auto;' type='text' class='form-control' id='picName"+ imageCounter + "' name='picName' value='Display name:'/>";
+    document.getElementById(divName).appendChild(newDivName);
+    imageCounter ++;
+  }
+
+</script>
+
+<footer class="mt-2" style="height:30px; margin-top:-30px;">
+  <nav class="navbar navbar-expand-sm">  
+    <img class="rounded mx-auto" src="https://mydex.github.io/citizen_interactive_wireframe/images/EPCAS-web.png" alt="logo" width="250">
+    <small class="ml-3 mr-3 mt-2 mb-2  font-italic font-weight-light">The EPCAS Project is funded by the European Social Fund under the Social Innovation Fund.</small>
+    <img class="rounded mx-auto" src="https://mydex.github.io/citizen_interactive_wireframe/images/esf.png" alt="logo" width="250">
+  </nav>
+</footer>
+</body>
+
+<script src="js/vendor/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>

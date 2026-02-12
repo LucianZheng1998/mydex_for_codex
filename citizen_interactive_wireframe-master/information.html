@@ -1,0 +1,875 @@
+<!DOCTYPE>
+<html lang="en">  
+<head>
+  <meta http-equiv="Content-type" content="text/html">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" >
+  <title>Citizen Interactive Wireframe</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" title="master">
+  <link rel="stylesheet" href="css/custom.css" type="text/css" media="screen" title="master">
+</head>
+
+<body style="height:100%;">
+  <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-primary">
+    <a class="navbar-brand mx-auto" href="https://mydex.github.io/citizen_interactive_wireframe/home_loggedin.html">
+      <img class="rounded" src="https://mydex.github.io/citizen_interactive_wireframe/images/EPCAS-square.jpg" alt="logo" width="40">
+    </a>
+    <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>      
+    <div class="collapse navbar-collapse" id="nav-content">
+      <ul class="nav navbar-nav mr-auto">
+        <li class="nav-item"><a href="https://mydex.github.io/citizen_interactive_wireframe/home_loggedin.html" class="nav-link text-white font-weight-light">Home</a></li>
+        <li class="nav-item"><a href="https://mydex.github.io/citizen_interactive_wireframe/action_plan.html" class="nav-link text-white font-weight-light">Action Plan</a></li>
+        <li class="nav-item"><a href="https://mydex.github.io/citizen_interactive_wireframe/messages.html" class="nav-link text-white font-weight-light">Messages</a></li>
+        <li class="nav-item"><a href="https://mydex.github.io/citizen_interactive_wireframe/tips.html" class="nav-link text-white font-weight-light">Advice</a></li>
+        <li class="nav-item"><a href="https://mydex.github.io/citizen_interactive_wireframe/information.html" class="nav-link text-white font-weight-bold font-italic">Your Data</a></li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+      </form class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <ul class="navbar-nav my-2 my-lg-0">
+        <li class="nav-item"><a href="https://mydex.github.io/citizen_interactive_wireframe/index.html" class="nav-link text-white font-weight-light">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main style=" min-height:73%;">
+    <div class="container">
+      <h3 class="mt-4 mb-4">Your data</h3>
+      <div id="module" class="container row mt-3 pr-0">
+        <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a id="accordionHeading" class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapsePersonal" aria-expanded="false" aria-controls="collapsePersonal">Personal</a></h5>
+        <div class="collapse col-12 p-0" id="collapsePersonal" aria-labelledby="headingPersonal">
+          <div class="table-responsive">
+            <table class="table table-bordered table-sm text-left">
+              <thead>
+                <th colspan="2" class="bg-primary">Personal Information</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="text-primary">Title</th>
+                  <td contenteditable="true" spellcheck="true">Ms</td>
+                </tr>
+                <tr>
+                  <th class="text-primary">Forename</th>
+                  <td contenteditable="true" spellcheck="true">Citizen</td>
+                </tr>
+                <tr>
+                  <th class="text-primary">Surname</th>
+                  <td contenteditable="true" spellcheck="true">Twenty</td>
+                </tr>
+                <tr>
+                  <th class="text-primary">Address</th>
+                  <td contenteditable="true" spellcheck="true">12 Fake Street<br>FakeTown
+                  </td>
+                </tr>
+                <tr>
+                  <th class="text-primary">Postcode</th>
+                  <td contenteditable="true" spellcheck="true">FA12 3KE</td>
+                </tr>
+                <tr>
+                  <th class="text-primary">Telephone</th>
+                  <td contenteditable="true" spellcheck="true">012345 678901</td>
+                </tr>
+                <tr>
+                  <th class="text-primary">Mobile</th>
+                  <td contenteditable="true" spellcheck="true">077123456789</td>
+                </tr>
+                <tr>
+                  <th class="text-primary">Email</th>
+                  <td contenteditable="true" spellcheck="true">citizen@twenty.com</td>
+                </tr>
+                <tr>
+                  <th class="text-primary">Date of Birth</th>
+                  <td><input type="date" class="form-control" name="dob" value="1980-01-01"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="module" class="container row mt-3 pr-0">
+        <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a id="accordionHeading" class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseProperty" aria-expanded="false" aria-controls="collapseProperty">Property</a></h5>
+        <div class="collapse col-12 p-0" id="collapseProperty" aria-labelledby="headingProperty">
+          <div class="table-responsive">
+            <table class="table table-bordered table-sm text-left">
+              <thead>
+                <th colspan="2" class="bg-primary">Property Information</th>
+              </thead>
+              <tbody>
+               <tr>
+                 <th class="text-primary">Property Type</th>
+                 <td>
+                   <form action="#/" class="m-0">
+                     <select name="propType">
+                       <option value="propDefault"></option>
+                       <option value="prop1">Bungalow</option>
+                       <option value="prop2">Flat</option>
+                       <option value="prop3">House</option>
+                       <option value="prop4">Maisonette</option>
+                     </select>
+                   </form>
+                 </td>
+               </tr>
+               <tr>
+                 <th class="text-primary">Home type</th>
+                 <td>
+                   <form action="#/" class="m-0">
+                     <select name="homeType">
+                       <option value="homeDefault"></option>
+                       <option value="home1">Detached</option>
+                       <option value="home2">End terrace</option>
+                       <option value="home3">Flat - 4 block</option>
+                       <option value="home4">Flat - 6 block</option>
+                       <option value="home5">High rise</option>
+                       <option value="home6">Mid terrace</option>
+                       <option value="home7">Multi storey flat</option>
+                       <option value="home8">Semi</option>
+                     </select>
+                   </form>
+                 </td>
+               </tr>
+               <tr>
+                 <th class="text-primary">Tenure</th>
+                 <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+               </tr>
+               <tr>
+                 <th class="text-primary">No of bedrooms</th>
+                 <td>
+                   <form action="#/" class="m-0">
+                     <select name="room">
+                       <option value="default"></option>
+                       <option value="room1">1</option>
+                       <option value="room2">2</option>
+                       <option value="room3">3</option>
+                       <option value="room4">4</option>
+                     </select>
+                   </form>
+                 </td>
+               </tr>
+               <tr>
+                 <th class="text-primary">Flat type</th>
+                 <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+               </tr>
+               <tr>
+                 <th class="text-primary">Flat position</th>
+                 <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+               </tr>
+               <tr>
+                 <th class="text-primary">Age of property</th>
+                 <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+       </div>
+     </div>
+     <div id="module" class="container row mt-3 pr-0">
+       <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a id="accordionHeading" class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseHeating" aria-expanded="false" aria-controls="collapseHeating">Heating & Energy</a></h5>
+       <div class="collapse col-12 p-0" id="collapseHeating" aria-labelledby="headingHeating">
+        <div class="table-responsive">
+          <table class="table table-bordered table-sm text-left">
+            <thead>
+              <th colspan="2" class="bg-primary">Heating & Energy Information</th>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="text-primary">What is the main wall type?</th>
+                <td class="font-italic">
+                  <form action="#/" class="m-0">
+                    <select name="wall" id="wall" onchange="showWall(this.options[this.selectedIndex].value)" required>
+                      <option value="wallDefault"></option>
+                      <option value="wall1">Cavity wall</option>
+                      <option value="wall2">Cavity wall - filled</option>
+                      <option value="wall3">Solid wall</option>
+                      <option value="wall4">System built</option>
+                      <option value="wall5">Other</option>
+                    </select>
+                  </form>
+                  <div id="wallOther"></div>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-primary">How much loft insulation?</th>
+                <td class="font-italic">
+                  <form action="#/" class="m-0">
+                    <select name="loft">
+                      <option value="loftDefault"></option>
+                      <option value="loft1">100ml or less</option>
+                      <option value="loft2">150ml</option>
+                      <option value="loft3">270ml (up to standard)</option>
+                    </select>
+                  </form>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-primary">What is property glazing type? <br>(%)</th>
+                <td class="font-italic">
+                  <form action="#/" class="m-0">
+                    <select name="glazing">
+                      <option value="glazingDefault"></option>
+                      <option value="glazing1">Double post 2003</option>
+                      <option value="glazing2">Double pre 2003</option>
+                      <option value="glazing3">Single</option>
+                    </select>
+                  </form>
+                  <p contenteditable="true" spellcheck="true">To be added</p>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-primary">Year windows were last updated? If known</th>
+                <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+              </tr>
+              <tr>
+                <th class="text-primary">Do you use low energy light bulbs? (%)</th>
+                <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+              </tr>
+              <tr>
+                <th class="text-primary">What is the main heating fuel used to heat the property?</th>
+                <td class="font-italic">
+                  <form action="#/" class="m-0">
+                    <select name="mainFuel" id="mainFuel" onchange="showFuel(this.options[this.selectedIndex].value)" required>
+                      <option value="mainFuelDefault"></option>
+                      <option value="mainFuel1">Electrical storage heating</option>
+                      <option value="mainFuel2">Gas central heating</option>
+                      <option value="mainFuel3">None</option>
+                      <option value="mainFuel4">Other</option>
+                    </select>
+                  </form>
+                  <div id="mainFuelOther"></div>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-primary">How old is your boiler?</th>
+                <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+              </tr>
+              <tr>
+                <th class="text-primary">Make and model of boiler</th>
+                <td><span class="font-italic" contenteditable="true" spellcheck="true">To be added</span><br>
+                  <u><a href="https://www.ncm-pcdb.org.uk/sap/searchpod.jsp?id=17" class="text-info" target="_blank">Helpful website</a></u>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-primary">How is your water heated?</th>
+                <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+              </tr>
+              <tr>
+                <th class="text-primary">What is the size of the hot water cylinder?</th>
+                <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+              </tr>
+              <tr>
+                <th class="text-primary">What type of insulaion does it have?</th>
+                <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+              </tr>
+              <tr>
+                <th class="text-primary">Is there a thermostat on the hot water cylinder?</th>
+                <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+              </tr>                                
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="module" class="container row mt-3 pr-0">
+      <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a id="accordionHeading" class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseSafety" aria-expanded="false" aria-controls="collapseSafety">Safety</a></h5>
+      <div class="collapse col-12 p-0" id="collapseSafety" aria-labelledby="headingSafety">
+        <div class="table-responsive">
+          <table class="table table-bordered table-sm text-left">
+            <thead>
+              <th colspan="2" class="bg-primary">Safety Information</th>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="text-primary">Do you have working smoke alarms?</th>
+                <td class="font-italic">
+                  <form action="#/" class="m-0">
+                    <select name="smokeAlarm" id="smokeAlarm" onchange="showSmoke(this.options[this.selectedIndex].value)" required>
+                      <option value="smokeDefault"></option>
+                      <option value="smoke1">No</option>
+                      <option value="smoke2">Yes</option>
+                    </select>
+                  </form>
+                  <div id="smokeAlarmYes"></div>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-primary">Are carbon monoxide monitors fitted?</th>
+                <td class="font-italic">
+                  <form action="#/" class="m-0">
+                   <select name="carbon" id="smokeAlarm" onchange="showCarbon(this.options[this.selectedIndex].value)" required>
+                    <option value="carbonDefault"></option>
+                    <option value="carbon1">No</option>
+                    <option value="carbon2">Yes</option>
+                  </select>
+                </form>
+                <div id="carbonAlarmYes"></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div id="module" class="container row mt-3 pr-0">
+    <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a id="accordionHeading" class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseHouse" aria-expanded="false" aria-controls="collapseHouse">Household</a></h5>
+    <div class="collapse col-12 p-0" id="collapseHouse" aria-labelledby="headingHouse">
+      <div class="table-responsive">
+        <table class="table table-bordered table-sm text-left">
+          <thead>
+            <th colspan="2" class="bg-primary">Household Information</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="text-primary">Is a member of the house in receipt of any benefits?</th>
+              <td class="font-italic">
+                <form action="#/" class="m-0">
+                 <select name="benefits">
+                  <option value="benefitsDefault"></option>
+                  <option value="benefits1">Yes</option>
+                  <option value="benefits2">No</option>
+                </select>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <th class="text-primary">Benefit type/s</th>
+            <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+          </tr>
+          <tr>
+           <th class="text-primary">Scan of benefit letter(s)</th>
+           <td>
+            <input type="text" class="form-control col-12 mb-2" id="name0" name="name" value="Display name:" />
+            <label class="btn btn-outline-primary mb-2" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);" for="image0">
+             <input id="image0" type="file" accept="image/*" style="display:none" onchange="$('#upload-file-info').html(this.files[0].name)"> Choose file</label><span class='font-italic' id="upload-file-info"> No file chosen</span><br>
+             <button class='btn btn-outline-primary mb-4' style='box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);'>Submit</button><br>
+             <div id="moreLetters"></div>
+             <button class="btn btn-outline-primary mt-1" onclick="addMoreLetters()" required style="display:inline-block; font-weight:400; text-align:center; white-space:nowrap; vertical-align:middle; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none border:1px solid transparent; padding:.375rem .75rem; font-size:1rem; line-height:1.5; border-radius:.25rem; color:#2E8B57; background-color:transparent; background-image:none; border-color:#2E8B57; box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);">Add more letters</button>
+           </td>
+         </tr>
+         <tr>
+          <th class="text-primary">Would you like a benefit check?</th>
+          <td class="font-italic">
+            <form action="#/" class="m-0">
+             <select name="check">
+              <option value="checkDefault"></option>
+              <option value="check1">Yes</option>
+              <option value="check2">No</option>
+            </select>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2" class="text-primary">How many people live in the house?</th>
+      </tr>
+      <tr>
+        <th>
+          <p class="m-0">Adults</p>
+          <p class="m-0">Children</p>
+        </th>
+        <td class="font-italic">
+         <div>
+          <form action="#/" class="m-0">
+           <select name="adultOne">
+             <option value="adultDefault"></option>
+             <option value="adult1">1</option>
+             <option value="adult2">2</option>
+             <option value="adult3">3</option>
+             <option value="adult4">4</option>
+           </select>
+         </form>
+       </div>
+       <div>
+        <form action="#/" class="m-0">
+         <select name="childrenOne">
+           <option value="childrenDeault"></option>
+           <option value="children0">0</option>
+           <option value="children1">1</option>
+           <option value="children2">2</option>
+           <option value="children3">3</option>
+           <option value="children4">4</option>
+         </select>
+       </form>
+     </div>
+   </td>
+ </tr>
+ <tr>
+   <th class="text-primary">Date of births for all children</th>
+   <td class="font-italic">
+     <input type="date" class="form-control" name="dob1" value="2018-01-01">
+     <button onclick="addDOB()" required class="btn btn-outline-primary" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);">+</button>
+     <div id="content"></div>
+   </td>
+ </tr>
+ <tr>
+  <th class="text-primary">Warm Home Discount: Core group</th>
+  <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+</tr>
+<tr>
+  <th class="text-primary">Warm Home Discount: Broader group</th>
+  <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="module" class="container row mt-3 pr-0">
+  <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a id="accordionHeading" class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseElectricity" aria-expanded="false" aria-controls="collapseElectricity">Electricity</a></h5>
+  <div class="collapse col-12 p-0" id="collapseElectricity" aria-labelledby="headingElectricity">
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm text-left">
+        <thead>
+          <th colspan="3" class="bg-primary">Electricity Supply Information</th>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="text-primary">How does the householder pay fuel bills?</th>
+            <td class="font-italic" colspan="2">
+              <form action="#/" class="m-0">
+               <select name="elecPay" id="elecPay" onchange="showElecPay(this.options[this.selectedIndex].value)" required>
+                <option value="elecDefault"></option>
+                <option value="elecPay1">Credit</option>
+                <option value="elecPay2">Prepaid</option>
+                <option value="elecPay3">Other</option>
+              </select>
+            </form>
+            <div id="elecPayOther"></div>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-primary">MPAN</th>
+          <td class="font-italic" colspan="2" contenteditable="true" spellcheck="true">To be added</td>
+        </tr>
+        <tr>
+          <th class="text-primary">Supplier</th>
+          <td class="font-italic" colspan="2" contenteditable="true" spellcheck="true">To be added</td>
+        </tr>
+        <tr>
+          <th class="text-primary">Account Reference</th>
+          <td class="font-italic" colspan="2" contenteditable="true" spellcheck="true">To be added</td>
+        </tr>
+        <tr>
+          <th class="text-primary">Tariff</th>
+          <td class="font-italic" colspan="2" contenteditable="true" spellcheck="true">To be added</td>
+        </tr>
+        <tr>
+          <th class="text-primary">Meter Serial Number</th>
+          <td class="font-italic" colspan="2" contenteditable="true" spellcheck="true">To be added</td>
+        </tr>
+        <tr class="table-primary">
+          <th>Date</th>
+          <th>Reading</th>
+          <th>Time taken</th>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td><input type="date" class="form-control" name="" class="m-1"></td>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td><input type="date" class="form-control" name="" class="m-1"></td>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td><input type="date" class="form-control" name="" class="m-1"></td>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td><input type="date" class="form-control" name="" class="m-1"></td>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td><input type="date" class="form-control" name="" class="m-1"></td>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td><input type="date" class="form-control" name="" class="m-1"></td>
+        </tr>
+        <tr>
+          <th class="table-primary" colspan="3">Notes</th>
+        </tr>
+        <tr>
+          <th>Date</th>
+          <th colspan="2">Comments</th>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" colspan="2" contenteditable="true" spellcheck="true">No data</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+<div id="module" class="container row mt-3 pr-0">
+  <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a id="accordionHeading" class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseGas" aria-expanded="false" aria-controls="collapseGas">Gas</a></h5>
+  <div class="collapse col-12 p-0" id="collapseGas" aria-labelledby="headingGas">
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm text-left">
+        <thead>
+          <th colspan="3" class="bg-primary">Gas SupplyInformation</th>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="text-primary">How does the householder pay fuel bills?</th>
+            <td class="font-italic" colspan="2">
+              <form action="#/" class="m-0">
+               <select name="gasPay" id="gasPay" onchange="showGasPay(this.options[this.selectedIndex].value)" required>
+                <option value="gasDefault"></option>
+                <option value="gasPay1">Credit</option>
+                <option value="gasPay2">Prepaid</option>
+                <option value="gasPay3">Other</option>
+              </select>
+            </form>
+            <div id="gasPayOther"></div>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-primary">Meter point number</th>
+          <td class="font-italic" colspan="2" contenteditable="true" spellcheck="true">To be added</td>
+        </tr>
+        <tr>
+          <th class="text-primary">Supplier</th>
+          <td class="font-italic" colspan="2" contenteditable="true" spellcheck="true">To be added</td>
+        </tr>
+        <tr>
+          <th class="text-primary">Account Reference</th>
+          <td class="font-italic" colspan="2" contenteditable="true" spellcheck="true">To be added</td>
+        </tr>
+        <tr>
+          <th class="text-primary">Tariff</th>
+          <td class="font-italic" colspan="2" contenteditable="true" spellcheck="true">To be added</td>
+        </tr>
+        <tr>
+          <th class="text-primary">Meter Serial Number</th>
+          <td class="font-italic" colspan="2" contenteditable="true" spellcheck="true">To be added</td>
+        </tr>
+        <tr class="table-primary">
+          <th>Date</th>
+          <th>Present reading</th>
+          <th>Previous reading</th>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+        </tr>
+        <tr>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+          <td class="font-italic" contenteditable="true" spellcheck="true">No data</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+<div id="module" class="container row mt-3 pr-0">
+  <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a id="accordionHeading" class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseOil" aria-expanded="false" aria-controls="collapseOil">Oil</a></h5>
+  <div class="collapse col-12 p-0" id="collapseOil" aria-labelledby="headingOil">
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm text-left mb-0">
+        <thead>
+          <th colspan="3" class="bg-primary">Oil</th>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="text-primary">Supplier</th>
+            <td colspan="2" class="m-0">
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input class="form-check-label" type="radio" value="2"> Same as Gas
+                </label>
+              </div>
+              <div>
+                <label class="form-check-label font-italic" contenteditable="true" spellcheck="true">To be added</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="text-primary">Account Reference</th>
+            <td colspan="2" class="m-0">
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input class="form-check-label" type="radio" value="2"> Same as Gas
+                </label>
+              </div>
+              <div>
+                <label class="form-check-label font-italic" contenteditable="true" spellcheck="true">To be added</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="text-primary">Tariff</th>
+            <td colspan="2" class="m-0">
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input class="form-check-label" type="radio" value="2"> Same as Gas
+                </label>
+              </div>
+              <div>
+                <label class="form-check-label font-italic" contenteditable="true" spellcheck="true">To be added</label>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="module" class="container row mt-3 pr-0">
+  <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a id="accordionHeading" class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseSolid" aria-expanded="false" aria-controls="collapseSolid">Solid Fuels Information </a></h5>
+  <div class="collapse col-12 p-0" id="collapseSolid" aria-labelledby="headingSolid">
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm text-left mb-0">
+        <thead>
+          <th colspan="3" class="bg-primary">Solid Fuel</th>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="text-primary">Supplier</th>
+            <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+          </tr>
+          <tr>
+            <th class="text-primary">Account Reference</th>
+            <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+          </tr>
+          <tr>
+            <th class="text-primary">Tariff</th>
+            <td class="font-italic" contenteditable="true" spellcheck="true">To be added</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="module" class="container row mt-3 pr-0">
+  <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a id="accordionHeading" class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseService" aria-expanded="false" aria-controls="collapseService">Energy Advocacy Service</a></h5>
+  <div class="collapse col-12 p-0" id="collapseService" aria-labelledby="headingService">
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm text-left">
+        <thead>
+          <th colspan="2" class="bg-primary">Energy Advocacy Service Information</th>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="text-primary">Reference</th>
+            <td contenteditable="true" spellcheck="true">abd123</td>
+          </tr>
+          <tr>
+            <th class="text-primary">Referred by</th>
+            <td>
+              <form action="#/" class="m-0">
+                <select name="referral">
+                  <option value="referralDefault"></option>
+                  <option value="referral1">Advice works</option>
+                  <option value="referral2">C4R</option>
+                  <option value="referral3">Council</option>
+                  <option value="referral4">Family First</option>
+                  <option value="referral5">Food bank</option>
+                  <option value="referral6">RAMH</option>
+                </select>
+              </form>
+              <p class="m-0" contenteditable="true" spellcheck="true">Name of individual</p>
+            </td>
+          </tr>
+          <tr>
+            <th class="text-primary">Reason for visit</th>
+            <td class="font-italic">
+              <form action="#/" class="m-0">
+                <select name="reasonType">
+                  <option value="reasonDefault"></option>
+                  <option value="reason1">Billing Issues</option>
+                  <option value="reason2">Fuel Debt</option>
+                  <option value="reason3">Meter Issues</option>
+                </select>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <th class="text-primary">Visit Date</th>
+            <td contenteditable="true" spellcheck="true">01/01/2001</td>
+          </tr>
+          <tr>
+            <th class="text-primary">Advisor</th>
+            <td contenteditable="true" spellcheck="true">Energy Advocate 1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="module" class="container row mt-3 pr-0">
+  <h5 id="line" class="col-12 col-md-6 col-lg-6 p-0 pb-3"><a id="accordionHeading" class="collapsed text-primary text-left" role="button" data-toggle="collapse" data-target="#collapseData" aria-expanded="false" aria-controls="collapseData">Data Protection & Mandate </a></h5>
+  <div class="collapse col-12 p-0" id="collapseData" aria-labelledby="headingData">
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm text-left">
+        <thead>
+          <th colspan="2" class="bg-primary">GDPR & Mandate</th>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="text-primary">GDPR</th>
+          </tr>
+          <tr>
+            <td>
+              GDPR information here, to be added later.
+            </td>
+          </tr>
+          <tr>
+            <th class="text-primary">Mandate</th>
+          </tr>
+          <tr>
+            <td>
+              <p class="mb-0">Information relating to GDPR, to be added at a later date.<br>
+              Signature Date</p>
+              <div class="container row">
+                <div class="col-md-5 col-lg-5 p-1 mt-2">
+                  Print report <br><a href="#/" class="btn btn-outline-primary" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);">Print</a>
+                </div>
+                <div class="col-md-6 col-lg-6 p-1 mt-2">         
+                  Download as PDF <br><a href="#/" class="btn btn-outline-primary" style="box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);">Download</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</main>
+
+<script>
+  function showWall(name){
+    if(name == 'wall5') {
+      document.getElementById('wallOther').innerHTML = 'Other:<br> <input type="text" class="form-control" id="wallOther" name="wallOther"/>';
+    } else {
+      document.getElementById('wallOther').innerHTML='';
+    } 
+  }
+
+  function showFuel(name){
+    if(name == 'mainFuel4') {
+      document.getElementById('mainFuelOther').innerHTML = 'Other:<br> <input type="text" class="form-control" id="fuelOther" name="fuelOther"/>';
+    } else {
+      document.getElementById('mainFuelOther').innerHTML='';
+    } 
+  }
+
+  function showSmoke(name){
+    if(name == 'smoke2') {
+      document.getElementById('smokeAlarmYes').innerHTML = 'Notes for smoke alarms:<br> <input type="text" class="form-control" id="smokeNotes" name="smokeNotes"/>';
+    } else {
+      document.getElementById('smokeAlarmYes').innerHTML='';
+    } 
+  }
+
+  function showCarbon(name){
+    if(name == 'carbon2') {
+      document.getElementById('carbonAlarmYes').innerHTML = 'Notes for carbon monoxide:<br> <input type="text" class="form-control" id="carbonNotes" name="carbonNotes"/>';
+    } else {
+      document.getElementById('carbonAlarmYes').innerHTML='';
+    } 
+  }
+
+  var dobCounter = 2;
+  function addDOB(){
+    var newDiv = document.createElement('div');
+    newDiv.innerHTML = 
+    "<input type='date' name='dob" + dobCounter +"' class='mb-2' >\
+    <input type='button' class='btn btn-outline-primary' value='-' onclick='removeRow(this)' style='box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);' >";
+    document.getElementById('content').appendChild(newDiv);
+    dobCounter ++;
+  }
+  function removeRow(input){
+    document.getElementById('content').removeChild(input.parentNode);
+  }
+
+  var letterCounter = 1;
+  function addMoreLetters(){
+    var newDiv = document.createElement('div');
+    newDiv.innerHTML = 
+    "<input style='width: auto;' type='text' class='form-control mb-2' id='picName"+ letterCounter + "' name='picName' value='Display name:'/>\
+    <label class='btn btn-outline-primary mb-2' style='box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);' for='image"+ letterCounter + "'>\
+    <input id='image"+ letterCounter + "' type='file' accept='image/*' style='display:none' onchange='$('#upload-file-info').html(this.files[0].name)'> Choose file</label><span class='font-italic' id='upload-file-info'> No file chosen</span><br>\
+    <button class='btn btn-outline-primary mb-4' style='box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);'>Submit</button>"
+    document.getElementById('moreLetters').appendChild(newDiv);
+    letterCounter ++;
+  }
+
+  function showElecPay(name){
+    if(name == 'elecPay3') {
+      document.getElementById('elecPayOther').innerHTML = 'Other:<br> <input type="text" class="form-control" id="elecPay_other" name="elecPay_other"/>';
+    } else {
+      document.getElementById('elecPayOther').innerHTML='';
+    } 
+  }
+
+  function showGasPay(name){
+    if(name == 'gasPay3') {
+      document.getElementById('gasPayOther').innerHTML = 'Other:<br> <input type="text" class="form-control" id="gasPay_other" name="gasPay_other"/>';
+    } else {
+      document.getElementById('gasPayOther').innerHTML='';
+    } 
+  }
+</script>
+
+<style>
+#line {
+  border-bottom: 2px solid #2E8B57;
+}
+
+#module #accordionHeading.collapsed:after  {
+  content: '+';
+  float: right;
+  color: black;
+}
+
+#module #accordionHeading:not(.collapsed):after {
+  content: '-';
+  float: right;
+  color: black;
+}
+</style>
+
+<footer class="mt-2" style="height:30px; margin-top:-30px;">
+  <nav class="navbar navbar-expand-sm">  
+    <img class="rounded mx-auto" src="https://mydex.github.io/citizen_interactive_wireframe/images/EPCAS-web.png" alt="logo" width="250">
+    <small class="ml-3 mr-3 mt-2 mb-2  font-italic font-weight-light">The EPCAS Project is funded by the European Social Fund under the Social Innovation Fund.</small>
+    <img class="rounded mx-auto" src="https://mydex.github.io/citizen_interactive_wireframe/images/esf.png" alt="logo" width="250">
+  </nav>
+</footer>
+</body>
+
+<script src="js/vendor/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>
