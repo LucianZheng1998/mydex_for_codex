@@ -1,0 +1,1337 @@
+{
+	"info": {
+		"_postman_id": "fde1d991-f71c-4b9c-8496-2df2846735a2",
+		"name": "ALISS MRD Examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45159715"
+	},
+	"item": [
+		{
+			"name": "Aliss",
+			"item": [
+				{
+					"name": "Services by ID",
+					"item": [
+						{
+							"name": "single service-id passed",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var data = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/json\", function() {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"The data returned is the data requested as per service-id\", function() {",
+											"    var URL = require('url');",
+											"    let pathname = URL.parse(request.url).pathname;",
+											"    let id = pathname.split(\"/\").pop();",
+											"    ",
+											"    pm.expect(data[0].id).to.eql(id);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/25525a5e-a405-4ddb-bf50-3a32fe005151",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"25525a5e-a405-4ddb-bf50-3a32fe005151"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "multiple service-ids passed",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var data = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/json\", function() {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"The data returned is the data requested as per service-ids\", function() {",
+											"    var URL = require('url');",
+											"    let pathname = URL.parse(request.url).pathname;",
+											"    let serviceIds = pathname.split(\"/\").pop();",
+											"    let ids = serviceIds.split(\",\").sort();",
+											"    ids.forEach(function(id, index) {",
+											"        pm.expect(data[index].id).to.eql(id);",
+											"    })",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/25525a5e-a405-4ddb-bf50-3a32fe005151,259ea6be-6861-4e45-82ee-5a3ff6eeb6a1",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"25525a5e-a405-4ddb-bf50-3a32fe005151,259ea6be-6861-4e45-82ee-5a3ff6eeb6a1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ASC order by services.name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var data = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/json\", function() {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"Services are in ascending order by 'name'\", function() {",
+											"    let serviceNameArray = [];",
+											"    let sortedArray = [];",
+											"    data.forEach(function(service) {",
+											"        serviceNameArray.push(service.name);",
+											"        sortedArray.push(service.name);",
+											"    })",
+											"",
+											"    sortedArray.sort();",
+											"    pm.expect(serviceNameArray).to.eql(sortedArray);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/2d3365c3-968c-47b4-867f-552692f1c0dc,259ea6be-6861-4e45-82ee-5a3ff6eeb6a1?order=ASC&order_by=services.name",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"2d3365c3-968c-47b4-867f-552692f1c0dc,259ea6be-6861-4e45-82ee-5a3ff6eeb6a1"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "ASC"
+										},
+										{
+											"key": "order_by",
+											"value": "services.name"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DESC order by organisations.name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var data = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/json\", function() {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"Services are in ascending order by 'name'\", function() {",
+											"    let organisationNameArray = [];",
+											"    let reverseSortedArray = [];",
+											"    data.forEach(function(service) {",
+											"        organisationNameArray.push(service.organisation.name);",
+											"        reverseSortedArray.push(service.organisation.name);",
+											"    })",
+											"",
+											"    reverseSortedArray.sort();",
+											"    reverseSortedArray.reverse();",
+											"    pm.expect(organisationNameArray).to.eql(reverseSortedArray);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/25525a5e-a405-4ddb-bf50-3a32fe005151,259ea6be-6861-4e45-82ee-5a3ff6eeb6a1?order=DESC&order_by=organisations.name",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"25525a5e-a405-4ddb-bf50-3a32fe005151,259ea6be-6861-4e45-82ee-5a3ff6eeb6a1"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "DESC"
+										},
+										{
+											"key": "order_by",
+											"value": "organisations.name"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "XML format",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Content-Type is text/html\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"text/html; charset=UTF-8\");",
+											"});",
+											"",
+											"pm.test(\"Response object returned includes xml line\", function () {",
+											"    pm.expect(pm.response.text()).to.include('<?xml version=\"1.0\"?>');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/25525a5e-a405-4ddb-bf50-3a32fe005151?format=xml",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"25525a5e-a405-4ddb-bf50-3a32fe005151"
+									],
+									"query": [
+										{
+											"key": "format",
+											"value": "xml"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Filter Services",
+					"item": [
+						{
+							"name": "No filters, key-set pagination",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Content-Type is application/json\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"All service names start with 'B'\", function () {",
+											"    const services = pm.response.json();",
+											"    pm.expect(services).to.be.an('array').that.is.not.empty;",
+											"",
+											"    const allStartWithD = services.every(service => service.name.toUpperCase().startsWith('B'));",
+											"    pm.expect(allStartWithD).to.be.true;",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/search?after=AZ&before=C&order_by=services.name",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"search"
+									],
+									"query": [
+										{
+											"key": "after",
+											"value": "AZ"
+										},
+										{
+											"key": "before",
+											"value": "C"
+										},
+										{
+											"key": "order_by",
+											"value": "services.name"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Single filter option (LIKE)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Content-Type is application/json\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"Each service has at least one accessibility_feature.slug LIKE '%quiet%'\", function () {",
+											"    const services = pm.response.json();",
+											"",
+											"    //we want to know if no data is returned since this renders the test useless",
+											"    pm.expect(services.length, \"Services array should not be empty\").to.be.above(0);",
+											"",
+											"    services.forEach((service, index) => {",
+											"        pm.expect(service).to.have.property('accessibility_features').that.is.an('array');",
+											"",
+											"        const hasQuietFeature = service.accessibility_features.some(feature =>",
+											"            typeof feature.slug === 'string' && feature.slug.toLowerCase().includes('quiet')",
+											"        );",
+											"",
+											"        pm.expect(hasQuietFeature, `Service at index ${index} must have at least one 'slug' LIKE '%quiet%'`).to.be.true;",
+											"    });",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/search?filters[accessibility_features][0][operator]=LIKE&filters[accessibility_features][0][field]=slug&filters[accessibility_features][0][value]=quiet",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"search"
+									],
+									"query": [
+										{
+											"key": "filters[accessibility_features][0][operator]",
+											"value": "LIKE"
+										},
+										{
+											"key": "filters[accessibility_features][0][field]",
+											"value": "slug"
+										},
+										{
+											"key": "filters[accessibility_features][0][value]",
+											"value": "quiet"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Default limit and ordering (=)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/json\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"Services array should contain exactly 20 items\", function () { //default LIMIT is 20",
+											"    const services = pm.response.json();",
+											"    pm.expect(services.length).to.eql(20);",
+											"});",
+											"",
+											"pm.test(\"Services should be in descending order by organisation.name\", function () {",
+											"    const services = pm.response.json();",
+											"",
+											"    for (let i = 0; i < services.length - 1; i++) {",
+											"        const currentName = services[i]?.organisation?.name?.toLowerCase();",
+											"        const nextName = services[i + 1]?.organisation?.name?.toLowerCase();",
+											"",
+											"        pm.expect(currentName >= nextName, `Expected \"${currentName}\" >= \"${nextName}\" at index ${i}`).to.be.true;",
+											"    }",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/search?filters[service_areas][0][operator]==&filters[service_areas][0][field]=name&filters[service_areas][0][value]=Highland&order_by=organisations.name&order=DESC",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"search"
+									],
+									"query": [
+										{
+											"key": "filters[service_areas][0][operator]",
+											"value": "="
+										},
+										{
+											"key": "filters[service_areas][0][field]",
+											"value": "name"
+										},
+										{
+											"key": "filters[service_areas][0][value]",
+											"value": "Highland"
+										},
+										{
+											"key": "order_by",
+											"value": "organisations.name"
+										},
+										{
+											"key": "order",
+											"value": "DESC"
+										},
+										{
+											"key": "after",
+											"value": "CZ",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LIMIT 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/json\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"Services array should contain exactly 3 items\", function () { //default LIMIT is 20",
+											"    const services = pm.response.json();",
+											"    pm.expect(services.length).to.eql(3);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/search?filters[service_areas][0][operator]==&filters[service_areas][0][field]=name&filters[service_areas][0][value]=Highland&limit=3",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"search"
+									],
+									"query": [
+										{
+											"key": "filters[service_areas][0][operator]",
+											"value": "="
+										},
+										{
+											"key": "filters[service_areas][0][field]",
+											"value": "name"
+										},
+										{
+											"key": "filters[service_areas][0][value]",
+											"value": "Highland"
+										},
+										{
+											"key": "limit",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Multiple filter options (AND)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Content-Type is application/json\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"Each service has 'Highland' in service_areas and a category with slug like 'children'\", function () {",
+											"    const services = pm.response.json();",
+											"",
+											"    pm.expect(services).to.be.an('array').that.is.not.empty;",
+											"",
+											"    services.forEach((service, index) => {",
+											"        const hasHighland = Array.isArray(service.service_areas) && service.service_areas.some(area => area.name === \"Highland\");",
+											"",
+											"        const hasChildrenCategory = Array.isArray(service.categories) &&",
+											"            service.categories.some(cat => typeof cat.slug === \"string\" && cat.slug.toLowerCase().includes(\"children\"));",
+											"",
+											"        pm.expect(hasHighland, `Service at index ${index} missing 'Highland' in service_areas`).to.be.true;",
+											"        pm.expect(hasChildrenCategory, `Service at index ${index} missing 'children' in category slugs`).to.be.true;",
+											"    });",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/search?filters[service_areas][0][operator]==&filters[service_areas][0][field]=name&filters[service_areas][0][value]=Highland&filters[service_areas][0][condition]=AND&filters[categories][0][operator]=LIKE&filters[categories][0][field]=slug&filters[categories][0][value]=children",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"search"
+									],
+									"query": [
+										{
+											"key": "filters[service_areas][0][operator]",
+											"value": "="
+										},
+										{
+											"key": "filters[service_areas][0][field]",
+											"value": "name"
+										},
+										{
+											"key": "filters[service_areas][0][value]",
+											"value": "Highland"
+										},
+										{
+											"key": "filters[service_areas][0][condition]",
+											"value": "AND"
+										},
+										{
+											"key": "filters[categories][0][operator]",
+											"value": "LIKE"
+										},
+										{
+											"key": "filters[categories][0][field]",
+											"value": "slug"
+										},
+										{
+											"key": "filters[categories][0][value]",
+											"value": "children"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Multiple filter options (OR)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Content-Type is application/json\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"Each service has 'Highland' in service_areas OR postal_code like 'PH15' in locations\", function () {",
+											"    const services = pm.response.json();",
+											"",
+											"    pm.expect(services).to.be.an('array').that.is.not.empty;",
+											"",
+											"    services.forEach((service, index) => {",
+											"        const hasHighland = Array.isArray(service.service_areas) &&",
+											"            service.service_areas.some(area => area.name === \"Highland\");",
+											"",
+											"        const hasExpectedPostalCode = Array.isArray(service.locations) &&",
+											"            service.locations.some(loc =>",
+											"                typeof loc.postal_code === \"string\" && loc.postal_code.includes(\"PH15\")",
+											"            );",
+											"",
+											"        const conditionMet = hasHighland || hasExpectedPostalCode;",
+											"",
+											"        pm.expect(conditionMet, `Service at index ${index} is missing both 'Highland' in service_areas and 'PH15' in postal_codes`).to.be.true;",
+											"    });",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/search?filters[service_areas][0][operator]==&filters[service_areas][0][field]=name&filters[service_areas][0][value]=Highland&filters[service_areas][0][condition]=OR&filters[locations][0][operator]=LIKE&filters[locations][0][field]=postal_code&filters[locations][0][value]=PH15",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"search"
+									],
+									"query": [
+										{
+											"key": "filters[service_areas][0][operator]",
+											"value": "="
+										},
+										{
+											"key": "filters[service_areas][0][field]",
+											"value": "name"
+										},
+										{
+											"key": "filters[service_areas][0][value]",
+											"value": "Highland"
+										},
+										{
+											"key": "filters[service_areas][0][condition]",
+											"value": "OR"
+										},
+										{
+											"key": "filters[locations][0][operator]",
+											"value": "LIKE"
+										},
+										{
+											"key": "filters[locations][0][field]",
+											"value": "postal_code"
+										},
+										{
+											"key": "filters[locations][0][value]",
+											"value": "PH15"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filter ids (IN)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Content-Type is application/json\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"Service IDs match [1a1fdf1b-f272-4dad-bad1-9dd2df583cae,2390b5cf-1f3f-4563-a1bc-3953ccb2bd86]\", function () {",
+											"    const expectedIds = [",
+											"        '1a1fdf1b-f272-4dad-bad1-9dd2df583cae',",
+											"        '2390b5cf-1f3f-4563-a1bc-3953ccb2bd86'",
+											"    ];",
+											"    const services = pm.response.json();",
+											"",
+											"    // Extract actual IDs from response",
+											"    const actualIds = services.map(service => service.id);",
+											"",
+											"    // Sort both arrays for comparison",
+											"    expectedIds.sort();",
+											"    actualIds.sort();",
+											"",
+											"    // Check the two arrays are deeply equal",
+											"    pm.expect(actualIds).to.eql(expectedIds);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/search?filters[services][0][operator]=IN&filters[services][0][field]=id&filters[services][0][value]=1a1fdf1b-f272-4dad-bad1-9dd2df583cae,2390b5cf-1f3f-4563-a1bc-3953ccb2bd86",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"search"
+									],
+									"query": [
+										{
+											"key": "filters[services][0][operator]",
+											"value": "IN"
+										},
+										{
+											"key": "filters[services][0][field]",
+											"value": "id"
+										},
+										{
+											"key": "filters[services][0][value]",
+											"value": "1a1fdf1b-f272-4dad-bad1-9dd2df583cae,2390b5cf-1f3f-4563-a1bc-3953ccb2bd86"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "XML format",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Content-Type is text/html\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"text/html; charset=UTF-8\");",
+											"});",
+											"",
+											"pm.test(\"Response object returned includes xml line\", function () {",
+											"    pm.expect(pm.response.text()).to.include('<?xml version=\"1.0\"?>');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/search?filters[service_areas][0][field]=name&filters[service_areas][0][operator]=LIKE&filters[service_areas][0][value]=Dumfries&filters[service_areas][0][condition]=OR&filters[service_areas][1][field]=name&filters[service_areas][1][operator]==&filters[service_areas][1][value]=Argyll and Bute&format=xml&limit=1",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"search"
+									],
+									"query": [
+										{
+											"key": "filters[service_areas][0][field]",
+											"value": "name"
+										},
+										{
+											"key": "filters[service_areas][0][operator]",
+											"value": "LIKE"
+										},
+										{
+											"key": "filters[service_areas][0][value]",
+											"value": "Dumfries"
+										},
+										{
+											"key": "filters[service_areas][0][condition]",
+											"value": "OR"
+										},
+										{
+											"key": "filters[service_areas][1][field]",
+											"value": "name"
+										},
+										{
+											"key": "filters[service_areas][1][operator]",
+											"value": "="
+										},
+										{
+											"key": "filters[service_areas][1][value]",
+											"value": "Argyll and Bute"
+										},
+										{
+											"key": "format",
+											"value": "xml"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "alphabetical key-set pagination 'D' results (without filters)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Content-Type is application/json\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"All service names start with 'D'\", function () {",
+											"    const services = pm.response.json();",
+											"    pm.expect(services).to.be.an('array').that.is.not.empty;",
+											"",
+											"    const allStartWithD = services.every(service => service.name.toUpperCase().startsWith('D'));",
+											"    pm.expect(allStartWithD).to.be.true;",
+											"});",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/search?order_by=services.name&after=CZ&before=E",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"search"
+									],
+									"query": [
+										{
+											"key": "order_by",
+											"value": "services.name"
+										},
+										{
+											"key": "after",
+											"value": "CZ"
+										},
+										{
+											"key": "before",
+											"value": "E"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "alphabetical key-set pagination 'D' results (with filters)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Content-Type is application/json\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"All service names start with 'D'\", function () {",
+											"    const services = pm.response.json();",
+											"    pm.expect(services).to.be.an('array').that.is.not.empty;",
+											"",
+											"    const allStartWithD = services.every(service => service.name.toUpperCase().startsWith('D'));",
+											"    pm.expect(allStartWithD).to.be.true;",
+											"});",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Mrd-Scopes",
+										"value": "aliss",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MRD_API_URL}}/aliss/get-services/search?order_by=services.name&after=CZ&before=E&filters[service_areas][0][operator]==&filters[service_areas][0][field]=name&filters[service_areas][0][value]=City of Edinburgh",
+									"host": [
+										"{{MRD_API_URL}}"
+									],
+									"path": [
+										"aliss",
+										"get-services",
+										"search"
+									],
+									"query": [
+										{
+											"key": "order_by",
+											"value": "services.name"
+										},
+										{
+											"key": "after",
+											"value": "CZ"
+										},
+										{
+											"key": "before",
+											"value": "E"
+										},
+										{
+											"key": "filters[service_areas][0][operator]",
+											"value": "="
+										},
+										{
+											"key": "filters[service_areas][0][field]",
+											"value": "name"
+										},
+										{
+											"key": "filters[service_areas][0][value]",
+											"value": "City of Edinburgh"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.sendRequest({",
+					"    url: pm.environment.get(\"OAUTH_URL\")+\"/oauth2/token\",",
+					"    method: 'POST',",
+					"    header: {",
+					"        'Accept': 'application/json',",
+					"        'Content-Type': 'application/x-www-form-urlencoded',",
+					"        'Authorization': \"Basic \"+pm.environment.get(\"OAUTH_MRD_CLIENT_AUTH_BASIC\")",
+					"    },",
+					"    body: {",
+					"        mode: 'urlencoded',",
+					"        urlencoded: [",
+					"            {key: 'grant_type', value: 'client_credentials'},",
+					"            {key: 'scope', value: 'aliss'}",
+					"        ]",
+					"    }",
+					"},",
+					"    (err, res) => {",
+					"        // Set ACCESS_TOKEN",
+					"        pm.variables.set(\"ACCESS_TOKEN\", res.json().access_token)",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+        "variable": [
+                {
+                        "key": "MRD_API_URL",
+                        "value": "https://api-mrd.mydex.org"
+                }
+        ]
+}
